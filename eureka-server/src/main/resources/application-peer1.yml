@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/pan-common/cloud-config
+          search-paths:
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer2:7002/eureka/,http://peer3:7003/eureka/
